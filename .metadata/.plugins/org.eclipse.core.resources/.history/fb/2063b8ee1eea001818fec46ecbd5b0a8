@@ -1,0 +1,31 @@
+package Pad;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class MyActionListener extends MySound implements ActionListener{
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getActionCommand().equals("녹음")) {
+			RemoveSound();
+		}
+		if(e.getActionCommand().equals("재생")) {
+			PrintSound();
+			
+			/*
+			for(int i = 0; i < SoundList.size(); i++){
+				playMusic(SoundList.get(i));
+			}
+			*/
+		}
+		if(e.getActionCommand().equals("종료")) {
+			System.exit(0);
+		}
+		
+		if(e.getActionCommand().equals("녹음") != true && e.getActionCommand().equals("재생") != true && e.getActionCommand().equals("종료") != true){
+			SaveSound(e.getActionCommand());
+			playMusic(e.getActionCommand());
+		}
+	}
+}

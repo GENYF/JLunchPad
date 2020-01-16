@@ -1,0 +1,42 @@
+package Pad;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class MainFrame extends JFrame{
+	public MainFrame() {
+		setTitle("JLunchpad");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container c = getContentPane();
+		c.setLayout(new BorderLayout(10, 10));
+		c.setBackground(Color.black);
+		
+		JPanel j1 = new JPanel(new GridLayout(1, 4, 10, 10));
+		j1.setBackground(Color.black);
+		JPanel j2 = new JPanel(new GridLayout(8, 8, 10, 10));
+		j2.setBackground(Color.black);
+		
+		c.add(j1, BorderLayout.NORTH);
+		c.add(j2, BorderLayout.CENTER);
+		
+		JButton[] jbt = new JButton[4];
+		jbt[0] = new JButton("저장");
+		jbt[1] = new JButton("삭제");
+		jbt[2] = new JButton("재생");
+		jbt[3] = new JButton("종료");
+		for(int i = 0; i < jbt.length; i++) {
+			jbt[i].setBackground(Color.white);
+			j1.add(jbt[i]);
+		}
+		
+		JButton[] lbt = new JButton[64];
+		for(int i = 0; i < lbt.length; i++) {
+			lbt[i] = new RoundButton(" ");
+			lbt[i].addActionListener(new ActionListener());
+			j2.add(lbt[i]);
+		}
+		
+		setSize(500, 500);
+		setVisible(true);
+	}
+}

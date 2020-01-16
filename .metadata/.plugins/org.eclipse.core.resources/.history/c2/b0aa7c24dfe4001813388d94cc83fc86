@@ -1,0 +1,12 @@
+package Pad;
+
+import java.util.ArrayList;
+
+public class Lunchpad {
+	public ArrayList<String> SoundList;
+	
+	public static void main(String[] args) {
+		SoundList = new ArrayList<String>();
+		MainFrame mf = new MainFrame();
+	}
+}

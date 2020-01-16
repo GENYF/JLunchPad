@@ -1,0 +1,41 @@
+package Pad;
+
+import java.io.File;
+import java.util.ArrayList;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
+public class MySound{
+	public static ArrayList<String> SoundList = new ArrayList<String>();
+	
+	public void playMusic(String adress) {
+		playSound("D:/JAVA Project/Lunchpad/Audio/(" + adress + ").wav");
+	}
+	
+	public void playSound(String adress) {
+	    try {
+	        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(adress).getAbsoluteFile());
+	        Clip clip = AudioSystem.getClip();
+	        clip.open(audioInputStream);
+	        clip.start();
+	    } 
+	    catch(Exception ex) {
+	        System.out.println("Error with playing sound.");
+	        ex.printStackTrace();
+	    }
+	}
+	
+	public void SaveSound(String adress) {
+		System.out.println(adress);
+		SoundList.add(adress);
+	}
+	
+	public void RemoveSound() {
+		SoundList.clear();
+	}
+	
+	public void PrintSound() {
+		System.out.println(SoundList);
+	}
+}

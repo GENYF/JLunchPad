@@ -1,0 +1,236 @@
+package Pad;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
+public class MyActionListener implements java.awt.event.ActionListener {
+	public ArrayList<String> Music = new ArrayList<String>();
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getActionCommand().equals("녹음")) {
+			//System.out.println(e.getActionCommand());
+			Music.clear();
+		}
+		if(e.getActionCommand().equals("재생")) {
+			//System.out.println(e.getActionCommand());
+			System.out.println(Music);
+		}
+		if(e.getActionCommand().equals("종료")) {
+			System.exit(0);
+		}
+		
+		if(e.getActionCommand().equals("녹음") != true || e.getActionCommand().equals("재생") != true || e.getActionCommand().equals("종료") != true){
+			Music.add(e.getActionCommand());
+			
+			if(e.getActionCommand().equals("1")) {
+				playSound("D:/JAVA Project/Lunchpad/Audio/test.wav");
+			}
+			else if(e.getActionCommand().equals("2")) {
+				
+			}
+			else if(e.getActionCommand().equals("3")) {
+						
+			}
+			else if(e.getActionCommand().equals("4")) {
+				
+			}
+			else if(e.getActionCommand().equals("5")) {
+				
+			}
+			else if(e.getActionCommand().equals("6")) {
+				
+			}
+			else if(e.getActionCommand().equals("7")) {
+				
+			}
+			else if(e.getActionCommand().equals("8")) {
+						
+			}
+			else if(e.getActionCommand().equals("9")) {
+				
+			}
+			else if(e.getActionCommand().equals("10")) {
+				
+			}
+			else if(e.getActionCommand().equals("11")) {
+						
+			}
+			else if(e.getActionCommand().equals("12")) {
+						
+			}
+			else if(e.getActionCommand().equals("13")) {
+						
+			}
+			else if(e.getActionCommand().equals("14")) {
+				
+			}
+			else if(e.getActionCommand().equals("15")) {
+				
+			}
+			else if(e.getActionCommand().equals("16")) {
+						
+			}
+			else if(e.getActionCommand().equals("17")) {
+						
+			}
+			else if(e.getActionCommand().equals("18")) {
+				
+			}
+			else if(e.getActionCommand().equals("19")) {
+				
+			}
+			else if(e.getActionCommand().equals("20")) {
+				
+			}
+			else if(e.getActionCommand().equals("21")) {
+				
+			}
+			else if(e.getActionCommand().equals("22")) {
+				
+			}
+			else if(e.getActionCommand().equals("23")) {
+				
+			}
+			else if(e.getActionCommand().equals("24")) {
+				
+			}
+			else if(e.getActionCommand().equals("25")) {
+				
+			}
+			else if(e.getActionCommand().equals("26")) {
+				
+			}
+			else if(e.getActionCommand().equals("27")) {
+				
+			}
+			else if(e.getActionCommand().equals("28")) {
+				
+			}
+			else if(e.getActionCommand().equals("29")) {
+				
+			}
+			else if(e.getActionCommand().equals("30")) {
+				
+			}
+			else if(e.getActionCommand().equals("31")) {
+				
+			}
+			else if(e.getActionCommand().equals("32")) {
+				
+			}
+			else if(e.getActionCommand().equals("33")) {
+				
+			}
+			else if(e.getActionCommand().equals("34")) {
+				
+			}
+			else if(e.getActionCommand().equals("35")) {
+				
+			}
+			else if(e.getActionCommand().equals("36")) {
+				
+			}
+			else if(e.getActionCommand().equals("37")) {
+				
+			}
+			else if(e.getActionCommand().equals("38")) {
+				
+			}
+			else if(e.getActionCommand().equals("39")) {
+				
+			}
+			else if(e.getActionCommand().equals("40")) {
+				
+			}
+			else if(e.getActionCommand().equals("41")) {
+				
+			}
+			else if(e.getActionCommand().equals("42")) {
+				
+			}
+			else if(e.getActionCommand().equals("43")) {
+				
+			}
+			else if(e.getActionCommand().equals("44")) {
+				
+			}
+			else if(e.getActionCommand().equals("45")) {
+				
+			}
+			else if(e.getActionCommand().equals("46")) {
+				
+			}
+			else if(e.getActionCommand().equals("47")) {
+				
+			}
+			else if(e.getActionCommand().equals("48")) {
+				
+			}
+			else if(e.getActionCommand().equals("49")) {
+				
+			}
+			else if(e.getActionCommand().equals("50")) {
+				
+			}
+			else if(e.getActionCommand().equals("51")) {
+				
+			}
+			else if(e.getActionCommand().equals("52")) {
+				
+			}
+			else if(e.getActionCommand().equals("53")) {
+				
+			}
+			else if(e.getActionCommand().equals("54")) {
+				
+			}
+			else if(e.getActionCommand().equals("55")) {
+				
+			}
+			else if(e.getActionCommand().equals("56")) {
+				
+			}
+			else if(e.getActionCommand().equals("57")) {
+				
+			}
+			else if(e.getActionCommand().equals("58")) {
+				
+			}
+			else if(e.getActionCommand().equals("59")) {
+				
+			}
+			else if(e.getActionCommand().equals("60")) {
+				
+			}
+			else if(e.getActionCommand().equals("61")) {
+				
+			}
+			else if(e.getActionCommand().equals("62")) {
+				
+			}
+			else if(e.getActionCommand().equals("63")) {
+				
+			}
+			else if(e.getActionCommand().equals("64")) {
+				
+			}
+		}
+	}
+	
+	public void playSound(String adress) {
+	    try {
+	        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(adress).getAbsoluteFile());
+	        Clip clip = AudioSystem.getClip();
+	        clip.open(audioInputStream);
+	        clip.start();
+	    } catch(Exception ex) {
+	        System.out.println("Error with playing sound.");
+	        ex.printStackTrace();
+	    }
+	}
+}

@@ -1,0 +1,24 @@
+package Pad;
+
+import java.io.File;
+import java.util.ArrayList;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
+public class MyAudio {
+	public ArrayList<String> Music = new ArrayList<String>();
+	
+	public void playSound(String adress) {
+	    try {
+	        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(adress).getAbsoluteFile());
+	        Clip clip = AudioSystem.getClip();
+	        clip.open(audioInputStream);
+	        clip.start();
+	    } catch(Exception ex) {
+	        System.out.println("Error with playing sound.");
+	        ex.printStackTrace();
+	    }
+	}
+}
